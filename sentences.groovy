@@ -23,10 +23,46 @@ for( num in list) {
 list.each { println it}
 
 //switch
-switch(x) {
+def num = 12.toFloat()
+switch(num) {
   case 1:
-          println ""
-          case
+          println "1"
+          break
+  case 2:
+          println "2"
+          break  
+  case 1..3:
+          println "in range 1..3"
+          break
+  case [1,2,12]:
+          println "num is in list [1,2,12]"
+          break  
+  case Integer:
+          println "num is an integer"
+          break
+  case Float:
+          println "num is float"
+          break  
   default:
-          println ""
+          println "detault"
+}
+
+// ternary operator (expresion) ? true : false
+def name = 'Dan'
+def isitdan = (name.toUpperCase() == 'DAN') ? 'YES' : 'NO'
+
+def msg
+def output = (msg != null) ? msg : 'default message...'
+def elvisOutput = msg ?: 'default message ....'
+
+// conditional structure
+def validAges = 18..35
+def someAge = 19
+println someAge in validAges
+
+// break/continue
+
+for( String s in 'a'..'z' ){
+  if ( s == 'a') continue
+  if ( s > 'b' ) break
 }
